@@ -13,8 +13,6 @@ QQ技术交流群：863662849<a target="_blank" href="https://qm.qq.com/cgi-bin/
 ![输入图片说明](https://images.gitee.com/uploads/images/2020/0811/152255_1abbac05_800553.png "屏幕截图.png")
 ![输入图片说明](https://images.gitee.com/uploads/images/2020/0811/152234_3627eff1_800553.png "屏幕截图.png")
 
-![输入图片说明](https://images.gitee.com/uploads/images/2020/0811/151300_85568341_800553.jpeg "红包雨.jpg")
-
 假设公司要开年会，让你设计一套红包雨项目，在某段时间内随机发放不同的礼品，你该如何设计呢？本项目实现了一个完整的红包雨模式抽奖系统，包括管理后台与前端界面。该项目由管理后台配置相关活动和奖品等信息，前端用户通过参与活动，完成抽奖。
 ​	
 
