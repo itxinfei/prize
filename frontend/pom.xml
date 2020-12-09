@@ -2,17 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <!--SpringBoot父依赖-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.7.RELEASE</version>
     </parent>
+
     <!--红包雨项目-->
-    <groupId>com.zeny.prize</groupId>
+    <groupId>com.pangzhao.prize</groupId>
     <artifactId>frontend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+
     <!--子模块-->
     <modules>
         <module>api</module>
@@ -21,12 +24,34 @@
         <module>msg</module>
         <module>commons</module>
     </modules>
+
     <!--版本管理-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <config.zk>zookeeper://172.168.20.221:2181</config.zk>
+                <config.root>prize</config.root>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <config.zk>172.168.20.221:2181</config.zk>
+                <config.root>prize</config.root>
+            </properties>
+        </profile>
+    </profiles>
+
     <!--依赖坐标-->
     <dependencyManagement>
         <dependencies>
@@ -73,6 +98,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <dependencies>
         <!-- 注册中心 -->
         <dependency>
@@ -117,26 +143,6 @@
         </dependency>
     </dependencies>
 
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <properties>
-                <config.zk>192.168.8.6:2181</config.zk>
-                <config.root>prize</config.root>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <properties>
-                <config.zk>127.0.0.1:2181</config.zk>
-                <config.root>prize</config.root>
-            </properties>
-        </profile>
-    </profiles>
-
     <build>
         <resources>
             <resource>
@@ -148,7 +154,6 @@
                 </includes>
             </resource>
         </resources>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

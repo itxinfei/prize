@@ -6,9 +6,8 @@
     <artifactId>job</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-
     <parent>
-        <groupId>com.zeny.prize</groupId>
+        <groupId>com.pangzhao.prize</groupId>
         <artifactId>frontend</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -80,7 +79,7 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.zeny.prize</groupId>
+            <groupId>com.pangzhao.prize</groupId>
             <artifactId>commons</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
